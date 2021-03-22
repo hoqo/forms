@@ -1,4 +1,4 @@
-import {Action, Button, FieldContainer, Paragraph, ValidationRules, Translations} from "./elements";
+import {Action, Button, FieldContainer, Paragraph, ValidationRules} from "./elements";
 
 export interface FormConfig {
     id: string;
@@ -16,7 +16,3 @@ export interface FormConfig {
 // Setup Container
 // + Add field
 // type = 'text' | 'email'
-
-const translations = {
-
-};

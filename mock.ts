@@ -37,22 +37,18 @@ const configMock: FormConfig = {
                         {
                             label: 'Manual',
                             value: '1',
-                            className: 'cl-4',
                         },
                         {
                             label: 'Electric',
                             value: '2',
-                            className: 'cl-4',
                         },
                         {
                             label: 'Electric moped',
                             value: '3',
-                            className: 'cl-4',
                         },
                         {
                             label: 'Other electronic aid',
                             value: '4',
-                            className: 'cl-4',
                         }
                     ]
                 },
@@ -66,21 +62,17 @@ const configMock: FormConfig = {
                 {
                     type: 'field',
                     fieldType: 'select',
+                    placeholder: 'Choose the country',
                     name: 'wheelchair-description',
                     label: 'If other aid, what?',
                     options: [
                         {
                             label: 'Ukraine',
                             value: 'ua',
-                            className: 'col-a',
-                            selected: true,
-                            hidden: true,
                         },
                         {
                             label: 'USA',
                             value: 'usa',
-                            className: 'col-a',
-                            selected: false,
                         }
                     ],
                 },
@@ -106,11 +98,5 @@ const configMock: FormConfig = {
                 message: 'This field is required.',
             }
         ]
-    },
-    translations: {
-        'Booking number': 'Booking number',
-        'Mandatory information': 'Mandatory information',
-        'E-mail': 'E-mail',
-        'Must be an email address': 'Must be an email address',
-    },
+    }
 };
