@@ -1,29 +1,34 @@
 export interface FieldContainer {
     type: 'field-container';
-    // we usually need a title for the group
-    title?: string; // translation key
+    title?: string;
+    // Should we add possibility to add paragraphs to containers?
     elements: (Input | Select | Textarea | RadioGroup)[];
     className?: string;
 }
 
 export interface Paragraph {
     type: 'paragraph';
-    text: string; // translation key
+    html: string;
     className?: string;
 }
 
 export interface Button {
     type: 'button';
     name: string;
-    text: string; // translation key
+    text: string;
     className?: string;
     action?: string; // action to be handled by form actions (ie submit, delete etc)
 }
 
+type InputType = 'email' | 'text' | 'checkbox' | 'tel' | 'number';
+
+type FieldType = 'textarea' | 'select' | 'radio' | InputType;
+
 export interface BaseFormField {
     type: 'field';
+    fieldType: FieldType;
     name: string;
-    label: string; // translation key
+    label?: string;
     className?: string;
     defaultValue?: string;
 }
@@ -42,28 +47,26 @@ export interface Action {
 
 interface Textarea extends BaseFormField {
     fieldType: 'textarea';
-    placeholder?: string; // translation key
+    label: string;
+    placeholder?: string;
 }
 
 interface Input extends BaseFormField {
-    fieldType: 'email' | 'text' | 'checkbox';
-    placeholder?: string; // translation key
+    fieldType: InputType;
+    placeholder?: string;
 }
 
 interface Select extends BaseFormField {
     fieldType: 'select';
+    label: string;
     placeholder: string;
-    defaultValue?: string;
     multiple?: boolean;
     options: Option[];
 }
 
-interface RadioGroup {
-    type: 'field';
+interface RadioGroup extends BaseFormField {
     fieldType: 'radio';
-    name: string;
     options: Option[];
-    defaultValue?: string;
 }
 
 interface Option {
